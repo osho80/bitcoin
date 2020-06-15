@@ -1,0 +1,15 @@
+.navbar {
+
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10% 0 ;
+    padding-bottom: 5px;
+    border-bottom: 2px solid gray;
+    .png {
+        width: 30px;
+        height: 30px;
+        padding-top: 10px;
+    
+        
+    }
+}

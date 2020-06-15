@@ -1,0 +1,6 @@
+<h3>Your moves:</h3>
+<section *ngFor="let transaction of transactions; let idx=index" class="transactions-list">
+    <h4>At: {{transaction.at | date: 'dd/MM/yy hh:mm:ss a'}} </h4>
+    <h4>Amount: {{transaction.amount}} Coins</h4>
+    
+</section>
