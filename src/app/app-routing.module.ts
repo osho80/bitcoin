@@ -8,17 +8,20 @@ import { ContactDetailsPageComponent } from './pages/contact-details-page/contac
 import { ContactEditComponent } from './cmps/contact-edit/contact-edit.component';
 import { ChartsComponent } from './pages/charts/charts.component'
 import { NavbarComponent } from './cmps/navbar/navbar.component'
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: 'login', pathMatch: 'full', component: LoginComponent},
-  {path: 'home', pathMatch: 'full', component: HomeComponent},
-  {path: 'contact', pathMatch: 'full', component: ContactPageComponent},
-  {path: 'contact/:id', pathMatch: 'full', component: ContactDetailsPageComponent},
-  {path: 'edit', pathMatch: 'full', component: ContactEditComponent},
-  {path: 'edit/:id', component: ContactEditComponent},
-  {path: 'charts', component: ChartsComponent},
+  {path: 'app', canActivate:[AuthGuard], children: [
+    {path: 'home', pathMatch: 'full', component: HomeComponent},
+    {path: 'contact', pathMatch: 'full', component: ContactPageComponent},
+    {path: 'contact/:id', pathMatch: 'full', component: ContactDetailsPageComponent},
+    {path: 'edit', pathMatch: 'full', component: ContactEditComponent},
+    {path: 'edit/:id', component: ContactEditComponent},
+    {path: 'charts', component: ChartsComponent}
+  ]},
   {path: '', component: NavbarComponent, outlet: 'navbar'}
 ];
 

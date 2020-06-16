@@ -42,7 +42,7 @@ export class ContactEditComponent implements OnInit {
   setForm(contact){
     // this.model = new Contact(this.contact._id, this.contact.name, this.contact.phone, this.contact.email)
     console.log('contact', contact);
-    this.model = this.contact;
+    if(contact) this.model = this.contact;
     
   }
   model = new Contact;
@@ -53,7 +53,7 @@ export class ContactEditComponent implements OnInit {
     this.submitted = true;
     console.log('Submitted: ', this.model);
     this.contactService.saveContact(this.model);
-    this.router.navigate(['/contact'])
+    this.router.navigate(['app/contact'])
     
     
   }

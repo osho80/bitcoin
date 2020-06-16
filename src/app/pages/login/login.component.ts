@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     console.log('Submitted: ', this.model);
     this.userService.signUp(this.model)
-    this.router.navigate(['/home'])
+    this.router.navigate(['app/home'])
     
     
   }

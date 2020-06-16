@@ -10,26 +10,27 @@ export class MovesListComponent implements OnInit {
 
   @Input() contact;
   @Input() onTransaction;
+  @Input() transactions;
 
   isPersonal = false;
-  transactions;
+  //transactions;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     if(this.contact) this.isPersonal = true;
-    this.loadTransactions(this.contact._id)
+    //this.loadTransactions(this.contact._id)
   }
 
-  async loadTransactions(id){
-    const user = await this.userService.getUser();
-    let moves = user.moves.filter(move => {
-      return move.toId === this.contact._id
-    })
-    this.transactions = moves;
-    console.log('moves in list: ', moves);
+  // async loadTransactions(id){
+  //   const user = await this.userService.getUser();
+  //   let moves = user.moves.filter(move => {
+  //     return move.toId === this.contact._id
+  //   })
+  //   this.transactions = moves;
+  //   console.log('moves in list: ', moves);
     
-    //this.moves = this.userService.getTransactions(id);
-  }
+  //   //this.moves = this.userService.getTransactions(id);
+  // }
 
 }

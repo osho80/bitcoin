@@ -1,7 +1,6 @@
 <section class="details-main" *ngIf="contact">
   <section class="contact-actions">
-    <img src="./assets/img/edit.png" alt="edit" [routerLink]="['/edit',contact._id]" title="Edit Contact"
-      class="edit png">
+    <img src="./assets/img/edit.png" alt="edit" [routerLink]="['/app/edit',contact._id]" title="Edit Contact" class="edit png">
   </section>
   <section class="contact-details">
     <img src="https://robohash.org/{{contact.name}}" alt={{contact.name}} width="100" height="100" />
@@ -14,7 +13,7 @@
 
   <section class="transfers">
 
-    <transfer-fund *ngIf="enableTransfer" [contact]="contact" (onToggleTransfer)="onToggleTransfer()"></transfer-fund>
+    <transfer-fund *ngIf="enableTransfer" [contact]="contact" (onTransaction)="loadTransactions(contact._id)" (onToggleTransfer)="onToggleTransfer()"></transfer-fund>
     <!-- <button (click)="onToggleTransfer()" *ngIf="!enableTransfer">+</button> -->
     <h4 (click)="onToggleTransfer()" *ngIf="!enableTransfer">Transfer Funds </h4>
     
@@ -22,7 +21,7 @@
   </section>
   <hr>
 
-  <moves-list [contact]="contact"></moves-list>
+  <moves-list [contact]="contact" [transactions]="transactions"></moves-list>
   <hr>
 
 </section>

@@ -5,13 +5,13 @@
           <input name="txt" autocomplete="off" placeholder="Search Contacts" [(ngModel)]="filterBy.txt" />
         </form>
         <!-- <button [routerLink]="['/edit']">+</button> -->
-        <img src="./assets/img/plus.png" alt="add" [routerLink]="['/edit']" title="Add Contact" class="add png">
+        <img src="./assets/img/plus.png" alt="add" [routerLink]="['/app/edit']" title="Add Contact" class="add png">
       </section>
       <ul>
         <li *ngFor="let contact of filteredContatcts; let idx=index">
           <img src="https://robohash.org/{{contact.name}}" alt={{contact.name}} class="contact-img"/>  
           
-          <h2 [routerLink]="['/contact',contact._id]"> {{contact.name}} </h2>
+          <h2 [routerLink]="[contact._id]"> {{contact.name}} </h2>
           <!-- <a [routerLink]="['/contact',contact._id]">
            
           </a> -->

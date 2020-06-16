@@ -30,7 +30,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   get filteredContatcts() {
-    return this.contacts.filter(contact => contact.name.includes(this.filterBy.txt))
+    return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.filterBy.txt))
   }
 
 }

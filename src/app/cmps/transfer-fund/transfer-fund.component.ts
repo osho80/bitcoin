@@ -30,7 +30,7 @@ export class TransferFundComponent implements OnInit {
     this.onTransaction.emit()
     //console.log('Submitted: ', this.model);
     //this.contactService.saveContact(this.model);
-    //this.router.navigate(['/contact'])
+    
     
     
   }

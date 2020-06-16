@@ -47,7 +47,7 @@ export class UserService {
             return this.loggedInUser
         } else {
 
-            return USERS[0];
+            return null //USERS[0];
         }
     }
 
